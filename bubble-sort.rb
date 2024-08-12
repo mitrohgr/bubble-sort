@@ -1,13 +1,22 @@
 def bubble_sort(array)
-  # PSEUDOCODE
-  # SET length to array.length
-  # REPEAT
-  #   SET swapped to false
-  #   FOR each time in 1..(length - 1)
-  #     IF prev element is greater than curr element THEN
-  #       SWAP the prev element with the curr element
-  #       SET swapped to true
-  #     ENDIF
-  #   ENDFOR
-  # UNTIL swapped is false
+  length = array.length
+  
+  loop do
+    swapped = false
+    
+    for i in 1..(length - 1)
+      if array[i-1] > array[i]
+        temp = array[i-1]
+        array[i-1] = array[i]
+        array[i] = temp
+        swapped = true
+      end
+    end
+
+    break if not swapped
+  end
+
+  array
 end
+
+bubble_sort([4, 3, 78, 2, 0, 2])
