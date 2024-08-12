@@ -9,14 +9,17 @@ def bubble_sort(array)
         temp = array[i-1]
         array[i-1] = array[i]
         array[i] = temp
+        
         swapped = true
       end
     end
 
+    length -= 1
+    
     break if not swapped
   end
 
   array
 end
 
-bubble_sort([4, 3, 78, 2, 0, 2])
+p bubble_sort([4, 3, 78, 2, 0, 2])
