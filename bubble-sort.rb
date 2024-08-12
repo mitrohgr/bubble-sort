@@ -2,7 +2,7 @@ def bubble_sort(array)
   length = array.length
   
   loop do
-    swapped = false
+    new_length = 0
     
     for i in 1..(length - 1)
       if array[i-1] > array[i]
@@ -10,16 +10,16 @@ def bubble_sort(array)
         array[i-1] = array[i]
         array[i] = temp
         
-        swapped = true
+        new_length = i
       end
     end
 
-    length -= 1
-    
-    break if not swapped
+    length = new_length
+
+    break if length <= 1
   end
 
   array
 end
 
-p bubble_sort([4, 3, 78, 2, 0, 2])
+bubble_sort([4, 3, 78, 2, 0, 2])
